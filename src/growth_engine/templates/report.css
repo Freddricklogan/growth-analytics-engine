@@ -22,15 +22,15 @@
 .gae-blend td { font-weight: 600; border-top: 2px solid var(--border); }
 .gae-heat { color: var(--text); }
 .gae-heat--na { color: var(--muted); }
-.gae-heat[data-level='0'] { background: rgba(88, 166, 255, .04); }
-.gae-heat[data-level='1'] { background: rgba(88, 166, 255, .10); }
-.gae-heat[data-level='2'] { background: rgba(88, 166, 255, .16); }
-.gae-heat[data-level='3'] { background: rgba(88, 166, 255, .22); }
-.gae-heat[data-level='4'] { background: rgba(88, 166, 255, .28); }
-.gae-heat[data-level='5'] { background: rgba(88, 166, 255, .34); }
-.gae-heat[data-level='6'] { background: rgba(88, 166, 255, .40); }
-.gae-heat[data-level='7'] { background: rgba(88, 166, 255, .46); }
-.gae-heat[data-level='8'] { background: rgba(88, 166, 255, .52); }
-.gae-heat[data-level='9'] { background: rgba(88, 166, 255, .58); }
+.gae-heat[data-level='0'] { background: color-mix(in srgb, var(--accent) 3%, transparent); }
+.gae-heat[data-level='1'] { background: color-mix(in srgb, var(--accent) 6%, transparent); }
+.gae-heat[data-level='2'] { background: color-mix(in srgb, var(--accent) 9%, transparent); }
+.gae-heat[data-level='3'] { background: color-mix(in srgb, var(--accent) 12%, transparent); }
+.gae-heat[data-level='4'] { background: color-mix(in srgb, var(--accent) 15%, transparent); }
+.gae-heat[data-level='5'] { background: color-mix(in srgb, var(--accent) 18%, transparent); }
+.gae-heat[data-level='6'] { background: color-mix(in srgb, var(--accent) 21%, transparent); }
+.gae-heat[data-level='7'] { background: color-mix(in srgb, var(--accent) 24%, transparent); }
+.gae-heat[data-level='8'] { background: color-mix(in srgb, var(--accent) 27%, transparent); }
+.gae-heat[data-level='9'] { background: color-mix(in srgb, var(--accent) 30%, transparent); }
 .gae-method { font-size: .82rem; color: var(--muted); padding-left: 18px; margin: 0; }
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); border: 0; }
