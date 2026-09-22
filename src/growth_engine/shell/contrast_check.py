@@ -37,18 +37,16 @@ def ratio(a: str, b: str) -> float:
 
 
 def themes_from(css: str) -> dict[str, dict[str, dict[str, str]]]:
-    start = css.index("@media (prefers-color-scheme: light)")
-    end = css.index("\n}\n", start) + 3
-    parts = {"dark": css[:start] + css[end:], "light": css[start:end]}
+    """Dark blocks are [data-theme="x"] rules; light blocks carry [data-scheme="light"]."""
     out: dict[str, dict[str, dict[str, str]]] = {}
-    for scheme, text in parts.items():
-        for m in re.finditer(r'\[data-theme="([a-z]+)"\]\s*\{([^}]*)\}', text):
-            tokens = {
-                t.group(1): t.group(2).lower()
-                for t in re.finditer(r"--([a-z0-9-]+):\s*(#[0-9a-fA-F]{6})", m.group(2))
-            }
-            if tokens:
-                out.setdefault(m.group(1), {})[scheme] = tokens
+    pattern = r'((?:\[data-scheme="light"\])?)\s*\[data-theme="([a-z]+)"\]\s*\{([^}]*)\}'
+    for m in re.finditer(pattern, css):
+        tokens = {
+            t.group(1): t.group(2).lower()
+            for t in re.finditer(r"--([a-z0-9-]+):\s*(#[0-9a-fA-F]{6})", m.group(3))
+        }
+        if tokens:
+            out.setdefault(m.group(2), {})["light" if m.group(1) else "dark"] = tokens
     return out
 
 
