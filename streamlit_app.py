@@ -7,8 +7,14 @@ here describes a real programme.
 
 from __future__ import annotations
 
+# Community Cloud runs this file from a plain checkout; make the src/ package importable there.
+import sys
+from pathlib import Path
+
 import numpy as np
 import streamlit as st
+
+sys.path.insert(0, str(Path(__file__).resolve().parent / "src"))
 
 from growth_engine.attribution import compare, removal_effects, spearman
 from growth_engine.cohorts import average_curve, cohort_table

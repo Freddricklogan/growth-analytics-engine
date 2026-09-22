@@ -73,3 +73,11 @@ omit = ["src/growth_engine/cli.py"]
 
 [tool.coverage.report]
 show_missing = true
+
+# Streamlit Community Cloud installs from uv.lock with `uv sync`, which includes default dependency
+# groups but not extras; `app` is therefore also a default group so the hosted app gets Streamlit.
+[dependency-groups]
+app = ["streamlit>=1.38"]
+
+[tool.uv]
+default-groups = ["app"]
