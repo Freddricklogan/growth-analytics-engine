@@ -479,6 +479,11 @@ dev = [
     { name = "ruff" },
 ]
 
+[package.dev-dependencies]
+app = [
+    { name = "streamlit" },
+]
+
 [package.metadata]
 requires-dist = [
     { name = "bandit", marker = "extra == 'dev'", specifier = ">=1.7" },
@@ -492,6 +497,9 @@ requires-dist = [
     { name = "typer", specifier = ">=0.12" },
 ]
 provides-extras = ["app", "dev"]
+
+[package.metadata.requires-dev]
+app = [{ name = "streamlit", specifier = ">=1.38" }]
 
 [[package]]
 name = "h11"
