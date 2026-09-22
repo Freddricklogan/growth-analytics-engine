@@ -1,0 +1,9 @@
+# Streamlit companion app: the "midnight" category palette (dark), matching the static report's shell.
+# Values are the dark midnight tokens from the Executive Shell (src/growth_engine/shell/exec-shell.css).
+[theme]
+base = "dark"
+primaryColor = "#d4a95a"
+backgroundColor = "#0b1220"
+secondaryBackgroundColor = "#111a2e"
+textColor = "#e6edf3"
+font = "sans serif"
